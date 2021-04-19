@@ -1,10 +1,39 @@
-// Select color input
-// Select size input
+// Global Variables
+const submitButton = document.getElementById("sizePicker");
+const container = document.getElementById("pixelCanvas")
 
-// When size is submitted by the user, call makeGrid()
+var gridHeight = document.getElementById("inputHeight").value;
+var gridWidth = document.getElementById("inputWidth").value;
+var colorPicker = document.getElementById("colorPicker");
 
+//Event Listener, first checks to see if button is present
+if (submitButton) {
+		submitButton.addEventListener('submit', function() {
+			// Stops the refresh
+			event.preventDefault()
+
+			// Clears away old grid
+			while(container.hasChildNodes()) {
+				container.removeChild(container.lastChild)
+			}
+
+			gridHeight = document.getElementById("inputHeight").value;
+			gridWidth = document.getElementById("inputWidth").value;
+			makeGrid()
+		})
+}
+
+//Makes Grid and Updated Cell Color
 function makeGrid() {
+	for (let r = 0; r < gridWidth; r++) {
+		let row = container.insertRow();
 
-// Your code goes here!
+		for (h = 0; h < gridHeight; h++) {
+			let column = row.insertCell();
 
+			column.addEventListener("click", function() {
+				this.style.background = colorPicker.value;
+			})
+		}
+	}
 }
