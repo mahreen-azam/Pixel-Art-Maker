@@ -8,19 +8,19 @@ var colorPicker = document.getElementById("colorPicker");
 
 //Event Listener, first checks to see if button is present
 if (submitButton) {
-		submitButton.addEventListener('submit', function() {
-			// Stops the refresh
-			event.preventDefault()
+	submitButton.addEventListener('submit', function() {
+		// Stops the refresh
+		event.preventDefault()
 
-			// Clears away old grid
-			while(container.hasChildNodes()) {
-				container.removeChild(container.lastChild)
-			}
+		// Clears away old grid
+		while(container.hasChildNodes()) {
+			container.removeChild(container.lastChild)
+		}
 
-			gridHeight = document.getElementById("inputHeight").value;
-			gridWidth = document.getElementById("inputWidth").value;
-			makeGrid()
-		})
+		gridHeight = document.getElementById("inputHeight").value;
+		gridWidth = document.getElementById("inputWidth").value;
+		makeGrid()
+	})
 }
 
 //Makes Grid and Updates Cell Color (Using an Event Listener)
