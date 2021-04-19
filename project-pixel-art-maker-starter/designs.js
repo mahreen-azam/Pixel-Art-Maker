@@ -23,15 +23,15 @@ if (submitButton) {
 		})
 }
 
-//Makes Grid and Updated Cell Color
+//Makes Grid and Updates Cell Color (Using an Event Listener)
 function makeGrid() {
 	for (let r = 0; r < gridWidth; r++) {
 		let row = container.insertRow();
 
 		for (h = 0; h < gridHeight; h++) {
-			let column = row.insertCell();
+			let cell = row.insertCell();
 
-			column.addEventListener("click", function() {
+			cell.addEventListener("click", function() {
 				this.style.background = colorPicker.value;
 			})
 		}
