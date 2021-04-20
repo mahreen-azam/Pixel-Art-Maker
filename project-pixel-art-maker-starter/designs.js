@@ -25,10 +25,10 @@ if (submitButton) {
 
 //Makes Grid and Updates Cell Color (Using an Event Listener)
 function makeGrid() {
-	for (let r = 0; r < gridWidth; r++) {
+	for (let r = 0; r < gridHeight; r++) {
 		let row = container.insertRow();
 
-		for (h = 0; h < gridHeight; h++) {
+		for (h = 0; h < gridWidth; h++) {
 			let cell = row.insertCell();
 
 			cell.addEventListener("click", function() {
